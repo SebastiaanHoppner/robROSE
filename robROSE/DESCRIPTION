@@ -1,0 +1,15 @@
+Package: robROSE
+Type: Package
+Title: Robust over-sampling of minority cases
+Version: 1.0.0
+Author: Sebastiaan Höppner <sebastiaan.hoppner@kuleuven.be> and
+        Irene Ortner <irene.ortner@applied-statistics.at>
+Maintainer: Sebastiaan Höppner <sebastiaan.hoppner@kuleuven.be>
+Description: Robust over-sampling of minority cases.
+Depends: R (>= 3.2.0)
+Imports: MASS, robustbase
+License: GPL (>= 2)
+LazyLoad: yes
+Encoding: UTF-8
+LazyData: true
+NeedsCompilation: yes
