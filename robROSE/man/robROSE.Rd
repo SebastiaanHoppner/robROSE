@@ -4,7 +4,7 @@
 
 \title{Robust over-sampling of minority cases}
 
-\description{Over-sample of minority cases in a robust way.}
+\description{Over-sampling minority cases while ignoring anomalies and incorporating the covariance structure of the minority cases.}
 
 \usage{robROSE(formula, data, r, dup_size, alpha = 0.5, const = 1, seed = NULL)}
 
@@ -20,7 +20,7 @@ The right-hand-side should be a series of vectors with the predictors. Transform
 
 \item{alpha}{numeric parameter used by the \code{covMcd} function for controlling the size of the subsets over which the determinant is minimized (default is \code{0.5}).}
 
-\item{const}{tuning constant that changes the volume of the elipsoids (default is 1). Can be \code{NULL}.}
+\item{const}{tuning constant that changes the volume of the elipsoids (default is 1).}
 
 \item{seed}{optional positive integer. A single value, interpreted as an integer, recommended to specify seeds and keep trace of the generated sample.}
 }
@@ -37,10 +37,21 @@ The right-hand-side should be a series of vectors with the predictors. Transform
 \item{data}{data frame with synthetic minority cases.}
 }
 
-\references{...}
+\references{Baesens, B., Hoppner, S., Ortner, I., and Verdonck T. (2020). robROSE: A robust approach for dealing with imbalanced data in fraud detection. \emph{arXiv:2003.11915}}
 
-\author{Sebastiaan Höppner and Irene Ortner}
+\author{Bart Baesens, Sebastiaan Hoppner, Irene Ortner, and Tim Verdonck}
 
 \examples{
-# Provide an example (TODO).
+library(robROSE)
+data(toy)
+
+plot(toy$X1, toy$X2,
+     pch = ifelse(toy$class == 0, 1, 18),
+     cex = ifelse(toy$class == 0, 1, 1.8),
+     col = ifelse(toy$class == 0, "dodgerblue", "black"),
+     xlim = c(-3, 2), ylim = c(-4, 3))
+
+result <- robROSE(class ~ ., data = toy, r = 0.5, const = 0.2, seed = 2020)
+
+points(result$data$X1, result$data$X2, pch = 16, col = "red")
 }

@@ -1,14 +1,22 @@
 Package: robROSE
 Type: Package
-Title: Robust over-sampling of minority cases
+Title: Robust Over-Sampling of Minority Cases
 Version: 1.0.0
-Author: Sebastiaan Höppner <sebastiaan.hoppner@kuleuven.be> and
-        Irene Ortner <irene.ortner@applied-statistics.at>
-Maintainer: Sebastiaan Höppner <sebastiaan.hoppner@kuleuven.be>
-Description: Robust over-sampling of minority cases.
-Depends: R (>= 3.2.0)
+Authors@R: c(
+            person(given = "Bart", family = "Baesens", role = c("aut")),
+            person(given = "Sebastiaan", family = "Hoppner", role = c("aut", "cre"), email = "sebastiaan.hoppner@gmail.com"),
+            person(given = "Irene", family = "Ortner", role = c("aut")),
+            person(given = "Tim", family = "Verdonck", role = c("aut"))
+             )
+Description: A robust approach for dealing with imbalanced data. The robROSE method is a robust version of ROSE (Menardi and Torelli, 2014) which uses the Minimum Covariance Determinant (MCD) estimator (Rousseeuw and Van Driessen, 1999) to cope simultaneously with the problem of imbalanced data and the presence of outliers in the minority class.
+Depends: R (>= 3.5.0)
 Imports: MASS, robustbase
 License: GPL (>= 2)
+Author: Bart Baesens [aut],
+  Sebastiaan Hoppner [aut, cre],
+  Irene Ortner [aut],
+  Tim Verdonck [aut]
+Maintainer: Sebastiaan Hoppner <sebastiaan.hoppner@gmail.com>
 LazyLoad: yes
 Encoding: UTF-8
 LazyData: true
