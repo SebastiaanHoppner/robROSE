@@ -1,5 +1,5 @@
 # robROSE
-This repository contains the R package `robROSE` and the corresponding paper:  
+This repository contains the R package `robROSE` and the corresponding article:  
 Baesens, B., Höppner, S., Ortner, I., and Verdonck T. (2019). robROSE: A robust approach for dealing with imbalanced data in fraud detection. arXiv:2003.11915  
 https://arxiv.org/abs/2003.11915
 
